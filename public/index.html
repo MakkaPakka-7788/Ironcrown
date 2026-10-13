@@ -96,5 +96,25 @@
   <script src="js/ui-panels.js?v=3.7.0"></script>
   <script src="js/ui-actions.js?v=3.7.0"></script>
   <script src="js/main.js?v=3.7.0"></script>
+  <script>
+let rCount = 0;
+let rTimer = null;
+
+document.addEventListener("keydown", function(e) {
+    if (e.key.toLowerCase() !== "r") return;
+
+    rCount++;
+    clearTimeout(rTimer);
+
+    rTimer = setTimeout(function() {
+        rCount = 0;
+    }, 700);
+
+    if (rCount === 3) {
+        rCount = 0;
+        window.location.href = "https://makkapakka-7788.github.io/MAKKASENTPAKKING-portfolio/flashcard.html";
+    }
+});
+</script>
 </body>
 </html>
